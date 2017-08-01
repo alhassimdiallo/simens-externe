@@ -18,6 +18,7 @@ function chargerPathologies(myArrayOrgane, myArrayClassePathologie, myArrayTypeP
 }
 
 function creerLalistePathologie($ListeOrgane, $ListeClassePathologie, $ListeTypePathologie) {
+	
     var index = $("LesPathologies").length;
     $liste = "<div id='Pathologie_" + (index + 1) + "'>" +
             "<LesPathologies>" +
@@ -103,6 +104,7 @@ $(function () {
 
 //FONCTION INITIALISATION (Par d�faut)
 function DefautOrganeClassePathologie(ListeOrgane, ListeClassePathologie, ListeTypePathologie, n) {
+	
     var i = 0;
     for (i; i < n; i++) {
         creerLalistePathologie(ListeOrgane, ListeClassePathologie, ListeTypePathologie);
@@ -123,9 +125,9 @@ function DefautOrganeClassePathologie(ListeOrgane, ListeClassePathologie, ListeT
 
     //AFFICHER L'ICONE SUPPRIMER QUAND ON A DEUX LISTES ET PLUS
     if (nbListePathologies() > 1) {
-        $("#supprimer_Pathologie").toggle(true);
+        $("#supprimer_pathologie").toggle(true);
     } else {
-        $("#supprimer_Pathologie").toggle(false);
+        $("#supprimer_pathologie").toggle(false);
     }
 }
 
@@ -177,7 +179,7 @@ var tabUrl = base_url.split("public");
 //********************* EXAMEN MORPHOLOGIQUE *****************************
 //********************* EXAMEN MORPHOLOGIQUE *****************************
 //********************* EXAMEN MORPHOLOGIQUE *****************************
-/*
+
 function ValiderOrdonnance() {
     $(function () {
         //Au debut on affiche pas le bouton modifier
@@ -272,4 +274,3 @@ function ValiderOrdonnance() {
         });
     });
 }
-*/

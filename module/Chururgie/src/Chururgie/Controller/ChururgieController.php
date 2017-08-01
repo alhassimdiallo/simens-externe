@@ -221,6 +221,9 @@ class ChururgieController extends AbstractActionController {
 	
 	
 	
+	
+	
+	
 	public function rechercheVisualisationConsultationAction(){
 	    
 	    $this->layout ()->setTemplate ( 'layout/chururgie' );
@@ -600,6 +603,13 @@ class ChururgieController extends AbstractActionController {
 	    ) );
 	}
 	
+	/*
+	 * Mise a jour complement consultation
+	 * Mise a jour complement consultation
+	 * Mise a jour complement consultation
+	 *
+	 * */
+	
 	public function updateComplementConsultationAction(){
 	
 		$this->getDateHelper();
@@ -630,7 +640,7 @@ class ChururgieController extends AbstractActionController {
 		
 		//mettre a jour la consultation
 		$this->getConsultationTable ()->updateConsultation ( $form );
-		
+	
 		//Recuperer les donnees sur les bandelettes urinaires
 		//Recuperer les donnees sur les bandelettes urinaires
 		$bandelettes = array(
@@ -642,6 +652,7 @@ class ChururgieController extends AbstractActionController {
 				'croixsucre' => $this->params()->fromPost('croixsucre'),
 				'croixcorpscetonique' => $this->params()->fromPost('croixcorpscetonique'),
 		);
+		
 		//mettre a jour les bandelettes urinaires
 		$this->getConsultationTable ()->deleteBandelette($id_cons);
 		$this->getConsultationTable ()->addBandelette($bandelettes);
@@ -658,7 +669,7 @@ class ChururgieController extends AbstractActionController {
 				'donnee5' => $this->params()->fromPost('examen_donnee5')
 		);
 		$this->getDonneesExamensPhysiquesTable()->updateExamenPhysique($info_donnees_examen_physique);
-		
+	
 		//POUR LES ANTECEDENTS ANTECEDENTS ANTECEDENTS
 		//POUR LES ANTECEDENTS ANTECEDENTS ANTECEDENTS
 		//POUR LES ANTECEDENTS ANTECEDENTS ANTECEDENTS
@@ -716,7 +727,7 @@ class ChururgieController extends AbstractActionController {
 		$id_personne = $this->getAntecedantPersonnelTable()->getIdPersonneParIdCons($id_cons);
 		$this->getAntecedantPersonnelTable()->addAntecedentsPersonnels($donneesDesAntecedents, $id_personne, $id_medecin);
 		$this->getAntecedantsFamiliauxTable()->addAntecedentsFamiliaux($donneesDesAntecedents, $id_personne, $id_medecin);
-		
+	
 		//POUR LES RESULTATS DES EXAMENS MORPHOLOGIQUES
 		//POUR LES RESULTATS DES EXAMENS MORPHOLOGIQUES
 		//POUR LES RESULTATS DES EXAMENS MORPHOLOGIQUES
@@ -731,7 +742,7 @@ class ChururgieController extends AbstractActionController {
 		);
 	
 		$this->getNotesExamensMorphologiquesTable()->updateNotesExamensMorphologiques($info_examen_morphologique);
-		
+
 		//POUR LES DIAGNOSTICS
 		//POUR LES DIAGNOSTICS
 		//POUR LES DIAGNOSTICS
@@ -819,6 +830,7 @@ class ChururgieController extends AbstractActionController {
 				'cardiologie_interventionnelle' => $this->params()->fromPost('cardiologieInterventionnelle'),
 				'autres_interventions' => $this->params()->fromPost('autresIntervention'),
 		);
+		
 		$this->getConsultationTable()->addTraitementsInstrumentaux($traitement_instrumental);
 		
 		//POUR LES COMPTES RENDU DES TRAITEMENTS
@@ -834,6 +846,7 @@ class ChururgieController extends AbstractActionController {
 		//POUR LES RENDEZ VOUS
 		$id_patient = $this->params()->fromPost('id_patient');
 		$date_RV_Recu = $this->params()->fromPost('date_rv');
+		//var_dump($date_RV_Recu);exit();
 		if($date_RV_Recu){
 			$date_RV = $this->dateHelper->convertDateInAnglais($date_RV_Recu);
 		}
@@ -1349,12 +1362,12 @@ class ChururgieController extends AbstractActionController {
 		$id_pat = $this->params ()->fromQuery ( 'id_patient', 0 );
 		$id = $this->params ()->fromQuery ( 'id_cons' );
 		
-            $listeorgane=$this->getConsultationTable()->listeDeTousLesOrganes();
-           
-            $listeclassePathologie=$this->getConsultationTable()->getPathologie();
-           
-              $listeTypePathologie=$this->getConsultationTable()->getTypePathologie();
-               
+            $listeOrgane=$this->getConsultationTable()->listeDeTousLesOrganes();
+          //
+            $listeclassePathologie=$this->getConsultationTable()->getClassePathologie();
+            
+            $listeTypePathologie=$this->getConsultationTable()->getTypePathologie();
+            //var_dump($listeTypePathologie);exit();
 		
 		
 		$listeMedicament = $this->getConsultationTable()->listeDeTousLesMedicaments();
@@ -1436,9 +1449,7 @@ class ChururgieController extends AbstractActionController {
 				'glycemie_capillaire' => $consult->glycemie_capillaire,
 				'pressionarterielle' => $consult->pression_arterielle,
 				'hopital_accueil' => $idHopital,
-                'listeOrgane' => $listeorgane,
-                'listeclassePathologie'=>$listeclassePathologie,
-                'listeTypePathologie'=> $listeTypePathologie,
+               
 		);
 		
 		$k = 1;
@@ -1472,7 +1483,11 @@ class ChururgieController extends AbstractActionController {
 		$listeActes = $this->getConsultationTable()->getListeDesActes();
 	
 		$form->populateValues ( array_merge($data,$bandelettes,$donneesAntecedentsPersonnels,$donneesAntecedentsFamiliaux) );
+		//var_dump($listeOrgane);exit();
 		return array (
+		          'lesOrgane' => $listeOrgane,
+		          'listeclassePathologie'=>$listeclassePathologie,
+		          'listeTypePathologie'=> $listeTypePathologie,
 				'lesdetails' => $liste,
 				'id_cons' => $id,
 				'nbMotifs' => $nbMotif,
@@ -1495,6 +1510,7 @@ class ChururgieController extends AbstractActionController {
 				'antMedPat' => $antMedPat,
 				'nbAntMedPat' => $antMedPat->count(),
 				'listeActes' => $listeActes,
+		      
 		);
 	}
 	

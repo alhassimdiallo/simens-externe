@@ -19,20 +19,20 @@ class OrganeTable{
 		return $resultSet;
 	}
         
-         public function listeDeTousLesOrganes(){
-             var_dump('es');             exit();
-		$adapter = $this->tableGateway->getAdapter();
-		$sql = new Sql ( $adapter );
-		$select = $sql->select('organe');
-		$select->columns(array('*'));
-		$stat = $sql->prepareStatementForSqlObject($select);
-		$resultat = $stat->execute();
-                $listeorgane=array();
-                foreach ($resultat as $result) {
-                    $listeorgane[$result["id_organe"]] = $result["nom_organe"];
+//          public function listeDeTousLesOrganes(){
+//              var_dump('es');             exit();
+// 		$adapter = $this->tableGateway->getAdapter();
+// 		$sql = new Sql ( $adapter );
+// 		$select = $sql->select('organe');
+// 		$select->columns(array('*'));
+// 		$stat = $sql->prepareStatementForSqlObject($select);
+// 		$resultat = $stat->execute();
+//                 $listeorgane=array();
+//                 foreach ($resultat as $result) {
+//                     $listeorgane[$result["id_organe"]] = $result["nom_organe"];
                     
-                }
+//                 }
                 
-	        return $listeorgane;
-	}
+// 	        return $listeorgane;
+// 	}
 }

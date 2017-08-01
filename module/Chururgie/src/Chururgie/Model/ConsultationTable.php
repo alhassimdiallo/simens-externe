@@ -13,18 +13,16 @@ class ConsultationTable {
     /**
      * RECUPERER Les types de pathologlogies
      */
-    public  function getTypePathologie(){
-        	$adapter = $this->tableGateway->getAdapter();
-		$sql = new Sql ( $adapter );
-		$select = $sql->select('type_pathologie');
-		$select->columns(array('*'));
-		$stat = $sql->prepareStatementForSqlObject($select);
-		$resultat = $stat->execute();
-                $listeTypePathologoie=array();
-                foreach ($resultat as $result) {
-                   $listeTypePathologoie[$result["id_type_pathologie"]] = $result["nom_type_pathologie"];     
-                }
-	        return $listeTypePathologoie;
+    public  function getClassePathologie(){
+        
+        $adapter = $this->tableGateway->getAdapter();
+        $sql = new Sql ( $adapter );
+        $select = $sql->select('classe_pathologie');
+        $select->columns(array( 'id_classe_pathologie','nom_classe_pathologie'));
+        $stat = $sql->prepareStatementForSqlObject($select);
+        $result = $stat->execute();
+        
+        return $result;
     }
     
     
@@ -32,39 +30,43 @@ class ConsultationTable {
      * RECUPERER La liste des organes pour la pathologie
      */
      public function listeDeTousLesOrganes(){
-           
-		$adapter = $this->tableGateway->getAdapter();
-		$sql = new Sql ( $adapter );
-		$select = $sql->select('organe');
-		$select->columns(array('*'));
-		$stat = $sql->prepareStatementForSqlObject($select);
-		$resultat = $stat->execute();
-                $listeorgane=array();
-                foreach ($resultat as $result) {
-                    $listeorgane[$result["id_organe"]] = $result["nom_organe"];
-                    
-                }
+         
+   
+         $adapter = $this->tableGateway->getAdapter();
+         $sql = new Sql ( $adapter );
+         $select = $sql->select('organe');
+         $select->columns(array( 'id_organe','LESORGANES'));
+         $stat = $sql->prepareStatementForSqlObject($select);
+         $result = $stat->execute();
+         
+         return $result;
+         
+// 		$adapter = $this->tableGateway->getAdapter();
+// 		$sql = new Sql ( $adapter );
+// 		$select = $sql->select('organe');
+// 		$select->columns(array('*'));
+// 		$stat = $sql->prepareStatementForSqlObject($select);
+// 		$resultat = $stat->execute();
+//                 $listeorgane=array();
+//                 foreach ($resultat as $result) {
+//                     $listeorgane[$result["id_organe"]] = $result["nom_organe"];
+//                 }
                 
-	        return $listeorgane;
+// 	        return $listeorgane;
 	}
     
     /**
      * RECUPERER Les classes de pathologlogies
      */
-    public  function getPathologie(){
-        	$adapter = $this->tableGateway->getAdapter();
-		$sql = new Sql ( $adapter );
-		$select = $sql->select('classe_pathologie');
-		$select->columns(array('*'));
-		$stat = $sql->prepareStatementForSqlObject($select);
-		$resultat = $stat->execute();
-                $listeclassePathologoie=array();
-                foreach ($resultat as $result) {
-                   $listeclassePathologoie[$result["id_classe_pathologie"]] = $result["nom_classe_pathologie"];
-                    
-                }
-                
-	        return $listeclassePathologoie;
+	public  function getTypePathologie(){
+	    $adapter = $this->tableGateway->getAdapter();
+	    $sql = new Sql ( $adapter );
+	    $select = $sql->select('type_pathologie');
+	    $select->columns(array( 'id_type_pathologie','nom_type_pathologie','id_classe_pathologie'));
+	    $stat = $sql->prepareStatementForSqlObject($select);
+	    $result = $stat->execute();
+	    
+	    return $result;
     }
     
     

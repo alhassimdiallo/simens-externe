@@ -152,7 +152,7 @@ class ConsultationForm extends Form {
 				'name' => 'examen_donnee1',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donn&eacute;e 1') 
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donnee 1') 
 				),
 				'attributes' => array (
 						'readonly' => 'readonly',
@@ -163,7 +163,7 @@ class ConsultationForm extends Form {
 				'name' => 'examen_donnee2',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donn&eacute;e 2') 
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donnee 2') 
 				),
 				'attributes' => array (
 						'readonly' => 'readonly',
@@ -174,7 +174,7 @@ class ConsultationForm extends Form {
 				'name' => 'examen_donnee3',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donn&eacute;e 3') 
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donnee 3') 
 				),
 				'attributes' => array (
 						'readonly' => 'readonly',
@@ -185,7 +185,7 @@ class ConsultationForm extends Form {
 				'name' => 'examen_donnee4',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donn&eacute;e 4') 
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donnee 4') 
 				),
 				'attributes' => array (
 						'readonly' => 'readonly',
@@ -196,7 +196,7 @@ class ConsultationForm extends Form {
 				'name' => 'examen_donnee5',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donn&eacute;e 5') 
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','donnee 5') 
 				),
 				'attributes' => array (
 						'readonly' => 'readonly',
@@ -1149,7 +1149,7 @@ class ConsultationForm extends Form {
 				'name' => 'antecedent_familial1',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Ant&eacute;c&eacute;dent 1')
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Antecedent 1')
 				),
 				'attributes' => array (
 						'id'  => 'antecedent_familial1'
@@ -1159,7 +1159,7 @@ class ConsultationForm extends Form {
 				'name' => 'antecedent_familial2',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Ant&eacute;c&eacute;dent 2')
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Antecedent 2')
 				),
 				'attributes' => array (
 						'id'  => 'antecedent_familial2'
@@ -1169,7 +1169,7 @@ class ConsultationForm extends Form {
 				'name' => 'antecedent_familial3',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Ant&eacute;c&eacute;dent 3')
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Antecedent 3')
 				),
 				'attributes' => array (
 						'id'  => 'antecedent_familial3'
@@ -1179,7 +1179,7 @@ class ConsultationForm extends Form {
 				'name' => 'antecedent_familial4',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Ant&eacute;c&eacute;dent 4')
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8','Antecedent 4')
 				),
 				'attributes' => array (
 						'id'  => 'antecedent_familial4'
@@ -1650,7 +1650,7 @@ class ConsultationForm extends Form {
 		        'value_options' => array (
 		            'Tous' =>  'Tous' ,
 		            'Normal' =>  'Normal',
-		            'Presentation Resultat' =>'Pr&eacute;sentation r&eacute;sultat',
+		            'Presentation Resultat' =>'Presentation resultat',
 		            'Rendez-vous' => 'Rendez-vous' 
 		        )
 		    ),

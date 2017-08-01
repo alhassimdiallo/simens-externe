@@ -4,11 +4,11 @@ namespace Chururgie\Model;
 
 class ClassePathologie{
     public $id_organe;
-    public $nom_organe;
+    public $LESORGANES;
     
     public function exchangeArray($data) {
-        $this->id_classe_pathologie = (! empty ( $data ['id_organe'] )) ? $data ['id_organe'] : null;
-        $this->nom_classe_pathologie = (! empty ( $data ['nom_organe'] )) ? $data ['nom_organe'] : null;
+        $this->id_organe = (! empty ( $data ['id_organe'] )) ? $data ['id_organe'] : null;
+        $this->LESORGANES = (! empty ( $data ['LESORGANES'] )) ? $data ['LESORGANES'] : null;
       
 }
 }

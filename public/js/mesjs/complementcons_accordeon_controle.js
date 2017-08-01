@@ -432,7 +432,7 @@ $(function(){
 /***BOITE DE DIALOG POUR LA CONFIRMATION DE SUPPRESSION**/
 /***BOITE DE DIALOG POUR LA CONFIRMATION DE SUPPRESSION**/
 
-	var theHREF = tabUrl[0]+"public/consultation/consultation-medecin";
+	var theHREF = tabUrl[0]+"public/chururgie/consultation-medecin";
 	function confirmation(){
 		
  		$( "#confirmation2" ).dialog({
@@ -651,7 +651,7 @@ $(function(){
 	    formulaire.setAttribute("action",tabUrl[0]+"public/chururgie/update-complement-consultation"); 
 	    formulaire.setAttribute("method","POST"); 
 	    
-	    // Ajout du formulaire à la page
+	    // Ajout du formulaire ï¿½ la page
 	    document.body.appendChild(formulaire);
 	     
 	    for( donnee in donnees){
@@ -853,7 +853,7 @@ $(function(){
 		/*Drepanocytose*/
 		donnees['drepanocytoseAM'] = $("#drepanocytoseAM:checked").val(); 
 		if(!donnees['drepanocytoseAM']){ donnees['drepanocytoseAM'] = 0;}
-		/*Dislipidémie*/
+		/*Dislipidï¿½mie*/
 		donnees['dislipidemieAM'] = $("#dislipidemieAM:checked").val(); 
 		if(!donnees['dislipidemieAM']){ donnees['dislipidemieAM'] = 0;}
 		/*Asthme*/ 
@@ -1441,8 +1441,8 @@ $(function(){
 		}
 			
  
-    //TESTER LEQUEL DES CHECKBOX est coché
-	//TESTER LEQUEL DES CHECKBOX est coché
+    //TESTER LEQUEL DES CHECKBOX est cochï¿½
+	//TESTER LEQUEL DES CHECKBOX est cochï¿½
 	//maskDeSaisie();
 	OptionCochee();
 	function OptionCochee() {
@@ -1876,6 +1876,15 @@ $(function(){
 			    });
 	  	}
 	  	
+	  	
+	  //Ajout de l'auto-completion sur le champ autre pour pathologie
+	    //Ajout de l'auto-completion sur le champ autre pour pathologie
+	  	
+//	  	function autocompletionAntecedentPathologie(myArrayPathologie){
+//		  	$( "#imageIconeAjouterLabel label input" ).autocomplete({
+//			  	  source: myArrayPathologie
+//			    });
+//	  	}
 	  	
 	  	function affichageAntecedentsMedicauxDuPatient(nbElement, tableau_){
 	  		for(var i=1 ; i<=nbElement ; i++){

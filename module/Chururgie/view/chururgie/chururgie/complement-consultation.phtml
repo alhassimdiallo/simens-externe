@@ -2626,11 +2626,11 @@ echo $this->form()->openTag($form);
                                
                    //partDefautMedicament(myArrayMedicament, 1);
 
-
+					
                    var myArrayMedicament = [''];
                    var myArrayForme = [''];
                    var myArrayTypeQuantiteMedicament = [''];
-
+						
                    /*Nouveau Code Ajouter*/
                    /*Nouveau Code Ajouter*/
                    /*Nouveau Code Ajouter*/ 
@@ -2638,7 +2638,7 @@ echo $this->form()->openTag($form);
                     <?php foreach($this->liste_med as $Liste) {?>
                            myArrayMedicament[j++] = "<?php echo $Liste['INTITULE']; ?>"; 
                     <?php } ?>
-                    
+                 
                     var j = 0;
                     <?php foreach($this->listeForme as $ListeForme) {?>
                            myArrayForme[j++] = "<?php echo $ListeForme['libelleForme']; ?>"; 
@@ -2856,6 +2856,8 @@ echo $this->form()->openTag($form);
 
 				</div>
 
+
+				<!-- ************* Traitement les pathologies **********-->
 				<!-- Les pathologies -->
 				<!-- Les pathologies -->
 				<!-- Les pathologies -->
@@ -2872,11 +2874,11 @@ echo $this->form()->openTag($form);
 					<!--******* ======= MENU MENU MENU =======  ******-->
 					<div
 						style="padding-bottom: 0px; margin-bottom: 5px; border-bottom: 2px solid green; margin-left: 0px;"></div>
-					<!-- LE PDF POUR IMPRESSION
+					<!-- LE PDF POUR IMPRESSION-->
 					<div class="ordonnance">
 						<hass> <input type="submit" alt="Constantes" title="Imprimer"
 							name="ordonnance" id="ordonnance"></hass>
-					</div> -->
+					</div>
 
 					<!-- LE CHAMP POUR LA DUREE DU TRAITEMENT DE L'ORDONNANCE-->
 
@@ -2922,44 +2924,8 @@ echo $this->form()->openTag($form);
 							<!-- A ne pas enlever -->
 						</div>
 
-						<script> 
-                   //ValiderOrdonnance();
 
-                   //var myArrayMedicament = [''];
-                   <?php
-                /*
-                 * foreach($this->liste_med as $Liste) {?> myArrayMedicament["<?php echo $Liste['ID_MATERIEL']; ?>"] = "<?php echo $Liste['INTITULE']; ?>"; <?php }
-                 */
-                
-                ?>  
-                   
-                   var myArrayorgane = [''];
-                   var myArrayclassePathologie = [''];
-                   var myArrayTypePathologie = [''];
 
-                   /*Nouveau Code Ajouter*/
-                   /*Nouveau Code Ajouter*/
-                   /*Nouveau Code Ajouter*/ 
-                    var j = 0;
-                    <?php foreach($this->listeorgane as $Listeorgane) {?>
-                           myArrayorgane[j++] = "<?php echo $Listeorgane['nom_organe']; ?>"; 
-                        
-                    <?php } ?>
-                   
-                    var j = 0;
-                    <?php foreach($this->listeclassePathologie as $listeclassePathologie) {?>
-                           myArrayclassePathologie[j++] = "<?php echo $listeclassePathologie['nom_classe_pathologie']; ?>"; 
-                    <?php } ?>
-
-                    var j = 0;
-                    <?php foreach($this->listeTypePathologie as $listeTypePathologie) {?>
-                           myArrayTypePathologie[j++] = "<?php echo $listeTypePathologie['nom_type_pathologie']; ?>"; 
-                    <?php } ?>
-
-                    DefautOrganeClassePathologie(myArrayorgane, myArrayclassePathologie, myArrayTypePathologie, 1);
-                    
-                    /* =================== */
-                 </script>
 						<!--********************* BOUTON AJOUTER-SUPPRIMER ************************-->
 						<!--********************* BOUTON AJOUTER-SUPPRIMER ************************-->
 						<div id="controls_pathologie"
@@ -2998,10 +2964,35 @@ echo $this->form()->openTag($form);
 
 					</div>
 
+                    <!--********************* CHARGEMENT DES DONNEES  ************************-->
+					<!--********************* CHARGEMENT DES DONNEES  ************************-->
+					<!--********************* CHARGEMENT DES DONNEES  ************************-->
+						<script> 
+                  // ValiderOrdonnance();
 
-					<!--********************* CHARGEMENT DES DONNEES  ************************-->
-					<!--********************* CHARGEMENT DES DONNEES  ************************-->
-					<!--********************* CHARGEMENT DES DONNEES  ************************-->
+                   var myArrayOrgane1 = [''];
+                   var myArrayClassePathologie1 = [''];
+                   var myArrayTypePathologie1 = [''];
+						
+                   /*Nouveau Code Ajouter*/
+                   /*Nouveau Code Ajouter*/
+                   /*Nouveau Code Ajouter*/ 
+                       var j = 0;
+                     
+                       <?php foreach($this->listeclassePathologie as $Liste1) {?>
+                       myArrayClassePathologie1[j++] = "<?php echo $Liste1['nom_classe_pathologie']; ?>"; 
+                <?php } ?>
+              alert(myArrayClassePathologie1);
+
+              <?php foreach($this->listeTypePathologie as $Liste2) {?>
+              myArrayTypePathologie1[j++] = "<?php echo $Liste2['	nom_type_pathologie']; ?>"; 
+       <?php } ?>
+     alert(myArrayTypePathologie1);
+               
+               // partDefautMedicament(myArrayMedicament, myArrayForme, myArrayTypeQuantiteMedicament, 1);
+              
+                    /* =================== */
+                 </script>
 
 				</div>
 
@@ -3155,7 +3146,7 @@ echo $this->form()->openTag($form);
 
 							<th class="form-rendezvous2" style="width: 27%;"> <?php echo $this->formRow($form->get('date_rv')); ?> </th>
 							<th class="form-rendezvous2" style="width: 17%;"> <?php echo $this->formRow($form->get('heure_rv'));?> </th>
-						
+
 							<th style="width: 10%;">
 							
 							<th>

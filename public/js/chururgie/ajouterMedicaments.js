@@ -17,6 +17,7 @@ function chargerMedicaments(myArrayMedicament, myArrayForme, myArrayTypeQuantite
 }
 
 function creerLalisteMedicament($listeDesElements, $ListeForme, $ListeQuantite) {
+	
     var index = $("LesMedicaments").length;
     $liste = "<div id='Medicament_" + (index + 1) + "'>" +
             "<LesMedicaments>" +
