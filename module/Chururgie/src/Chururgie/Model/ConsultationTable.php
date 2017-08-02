@@ -62,11 +62,16 @@ class ConsultationTable {
 	    $adapter = $this->tableGateway->getAdapter();
 	    $sql = new Sql ( $adapter );
 	    $select = $sql->select('type_pathologie');
-	    $select->columns(array( 'id_type_pathologie','nom_type_pathologie','id_classe_pathologie'));
+	    $select->columns(array('*'));
 	    $stat = $sql->prepareStatementForSqlObject($select);
-	    $result = $stat->execute();
+	    $resultat = $stat->execute();
+	    $listeorgane=array();
+	    $j=0;
+	    foreach ($resultat as $result) {
+	        $listeorgane[$j++] = $result["nom_type_pathologie"];
+	    }
 	    
-	    return $result;
+	    return $listeorgane;
     }
     
     

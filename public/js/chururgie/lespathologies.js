@@ -103,7 +103,7 @@ $(function () {
 
 
 //FONCTION INITIALISATION (Par d�faut)
-function DefautOrganeClassePathologie(ListeOrgane, ListeClassePathologie, ListeTypePathologie, n) {
+function DefautPathologie(ListeOrgane, ListeClassePathologie, ListeTypePathologie, n) {
 	
     var i = 0;
     for (i; i < n; i++) {

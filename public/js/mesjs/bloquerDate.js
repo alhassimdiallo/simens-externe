@@ -12,9 +12,9 @@ function bloquerDate(){
     var amois = dimanche1;
     for(var cpt=0; cpt<5 ; cpt++){
     	if(amois   < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+amois;    }else daysToDisable[j++] = annee+'-'+lemois+'-'+amois;
-    	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
-    	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
-    	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
+    //	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
+    //	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
+    //	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
     	amois = amois+07;
     }
     
@@ -23,9 +23,9 @@ function bloquerDate(){
     var amois = dimanche2;
     for(var cpt=0; cpt<5 ; cpt++){
     	if(amois   < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+amois;    }else daysToDisable[j++] = annee+'-'+lemois+'-'+amois;
-    	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
-    	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
-    	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
+   // 	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
+   // 	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
+   // 	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
     	amois = amois+07;
     }
     
@@ -34,9 +34,9 @@ function bloquerDate(){
     var amois = dimanche3;
     for(var cpt=0; cpt<5 ; cpt++){
     	if(amois   < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+amois;    }else daysToDisable[j++] = annee+'-'+lemois+'-'+amois;
-    	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
-    	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
-    	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
+   // 	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
+    //	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
+   // 	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
     	amois = amois+07;
     }
     /********QUATRIEME MOIS*********/
@@ -44,9 +44,9 @@ function bloquerDate(){
     var amois = dimanche4;
     for(var cpt=0; cpt<5 ; cpt++){
     	if(amois   < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+amois;    }else daysToDisable[j++] = annee+'-'+lemois+'-'+amois;
-    	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
-    	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
-    	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
+    //	if(amois-5 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-5);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-5);
+    //	if(amois-3 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-3);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-3);
+    //	if(amois-1 < 10){daysToDisable[j++] = annee+'-'+lemois+'-0'+(amois-1);}else daysToDisable[j++] = annee+'-'+lemois+'-'+(amois-1);
     	amois = amois+07;
     }
     /*************************************************************************************************************/
@@ -58,7 +58,7 @@ function bloquerDate(){
         dateFormat: 'dd/mm/yy',
         showAnim : 'bounce',
         minDate : '1',
-        maxDate : '90',
+        maxDate : '1000',
         yearRange : '2013:2050',
         
     });

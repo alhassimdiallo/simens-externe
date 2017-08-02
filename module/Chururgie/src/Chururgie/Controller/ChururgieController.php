@@ -1366,8 +1366,8 @@ class ChururgieController extends AbstractActionController {
           //
             $listeclassePathologie=$this->getConsultationTable()->getClassePathologie();
             
-            $listeTypePathologie=$this->getConsultationTable()->getTypePathologie();
-            //var_dump($listeTypePathologie);exit();
+           
+            //var_dump($listeTypePathologie[0]);exit();
 		
 		
 		$listeMedicament = $this->getConsultationTable()->listeDeTousLesMedicaments();
@@ -1483,7 +1483,9 @@ class ChururgieController extends AbstractActionController {
 		$listeActes = $this->getConsultationTable()->getListeDesActes();
 	
 		$form->populateValues ( array_merge($data,$bandelettes,$donneesAntecedentsPersonnels,$donneesAntecedentsFamiliaux) );
-		//var_dump($listeOrgane);exit();
+		
+		$listeTypePathologie=$this->getConsultationTable()->getTypePathologie();
+		//var_dump($listeTypePathologie);exit();
 		return array (
 		          'lesOrgane' => $listeOrgane,
 		          'listeclassePathologie'=>$listeclassePathologie,

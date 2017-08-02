@@ -1085,7 +1085,7 @@ class ConsultationForm extends Form {
 				'name' => 'date_fin_hospitalisation_prevue',
 				'type' => 'Text',
 				'options' => array (
-						'label' => iconv ( 'ISO-8859-1', 'UTF-8', 'Date fin pr&eacute;vue :'),
+						'label' => iconv ( 'ISO-8859-1', 'UTF-8', 'Date fin prevue :'),
 				),
 				'attributes' => array (
 						'id' => 'date_fin_hospitalisation_prevue'

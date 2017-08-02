@@ -1,5 +1,6 @@
 
-<?php
+<?php 
+
 use Chururgie\View\Helper\DateHelper;
 ?>
 <!-- SCRIPT DU NOUVEAU CODE POUR LA GESTION DES IMAGES  -->
@@ -15,7 +16,7 @@ echo $this->headScript()->appendFile($this->basePath() . '/js/plugins/pikachoose
 <?php echo $this->headScript()->appendFile($this->basePath().'/js/plugins/fancybox/source/jquery.fancybox.js');?>
 <?php echo $this->headLink()->appendStylesheet($this->basePath().'/js/plugins/fancybox/source/jquery.fancybox.css');?>
 <?php
-
+      echo $this->headLink()->appendStylesheet($this->basePath().'/css/monstyle.css');
 echo $this->headScript()->appendFile($this->basePath() . '/js/mesjs/complementcons_accordeon_controle.js');
 echo $this->headLink()->appendStylesheet($this->basePath() . '/css/mescss/bloquerDate.css'); // DatePicker
 echo $this->headScript()->appendFile($this->basePath() . '/js/mesjs/bloquerDate.js'); // Pour bloquer certaines dates ?>
@@ -42,7 +43,7 @@ $('#declarer_style').css({'font-weight':'bold','color':'white','font-size':'22px
 <!--===================================== BLOCAGE DES JOURS NON CONSULTABLE ====================================-->
 <!--===================================== BLOCAGE DES JOURS NON CONSULTABLE ====================================-->
 <!--************************************************************************************************************-->
-<?php
+<?php 
 $Control = new DateHelper();
 $today = new DateTime();
 $AnneeActuelle = $today->format('Y');
@@ -255,28 +256,34 @@ AntecedentScript();
 }
 
 #contenu {
-	visibility: hidden
+	visibility: hidden;
 }
 </style>
 
 <script>
+
+
 $(window).load(function () {
 
-	$('#wait').toggle(false);
-	$('#contenu').fadeIn().css({'visibility':'visible'});
+ 	$('#wait').toggle(false);
+ 	$('#contenu').fadeIn().css({'visibility':'visible'});
 	 
 });
 </script>
-
+  
 <div id="wait"
 	style="color: gray; font-size: 20px; text-align: center; margin-top: 80px;">
 	<span> Chargement ... </span>
 </div>
 
+ 
 <div id="contenu">
-<?php echo $this->headLink()->appendStylesheet($this->basePath().'/css/monstyle.css');?>
+<?php 
+
+//echo $this->headLink()->appendStylesheet($this->basePath().'/css/monstyle.css');?>
 
 <?php
+
 $form = $this->form;
 $form->setName('AVIS');
 $form->setAttribute('action', $this->url('chururgie', array(
@@ -290,7 +297,7 @@ echo $this->form()->openTag($form);
 
 <div id="accordions">
 		<!-- couleur bleu du logo//#49afcd-->
-
+ 
 		<!--*************** Accordeon ETAT CIVIL ******************-->
 		<!--*************** Accordeon ETAT CIVIL ******************-->
 		<!--*************** Accordeon ETAT CIVIL ******************-->
@@ -979,7 +986,7 @@ echo $this->form()->openTag($form);
 											style='cursor: pointer; padding-right: 10px;'
 											src='<?php echo $this->basepath().'/images_icons/tick-icon2.png'?>' />
 									</span>  
-                        
+                      
                         Dislipid&eacute;mie  <?php echo $this->formRow($form->get('dislipidemieAM'));?>
                      </label>
 								</div>
@@ -2970,30 +2977,41 @@ echo $this->form()->openTag($form);
 						<script> 
                   // ValiderOrdonnance();
 
-                   var myArrayOrgane1 = [''];
-                   var myArrayClassePathologie1 = [''];
-                   var myArrayTypePathologie1 = [''];
+                   var myArrayOrgane1 = new Array();
+                   var myArrayClassePathologie1 =  new Array();
+                   var myArrayTypePathologie1 =  new Array();
 						
                    /*Nouveau Code Ajouter*/
                    /*Nouveau Code Ajouter*/
                    /*Nouveau Code Ajouter*/ 
                        var j = 0;
-                     
+                       </script>
+                       
                        <?php foreach($this->listeclassePathologie as $Liste1) {?>
-                       myArrayClassePathologie1[j++] = "<?php echo $Liste1['nom_classe_pathologie']; ?>"; 
-                <?php } ?>
-              alert(myArrayClassePathologie1);
-
-              <?php foreach($this->listeTypePathologie as $Liste2) {?>
-              myArrayTypePathologie1[j++] = "<?php echo $Liste2['	nom_type_pathologie']; ?>"; 
-       <?php } ?>
-     alert(myArrayTypePathologie1);
-               
-               // partDefautMedicament(myArrayMedicament, myArrayForme, myArrayTypeQuantiteMedicament, 1);
+                                       <script>
+                       myArrayClassePathologie1[j++] = "<?php echo $Liste1['nom_classe_pathologie']; ?>";    
+                                     </script>
+                <?php } ?> <script> var j = 0;  </script>
               
-                    /* =================== */
-                 </script>
-
+              <?php foreach($this->lesOrgane as $Liste2) {?>
+               <script>
+              
+               myArrayOrgane1[j++] = "<?php echo $Liste2['LESORGANES']; ?>";  </script>
+       <?php } ?> <script>     var j = 0;  </script>
+       
+                  <?php 
+                  for($i=0;$i<count($this->listeTypePathologie);$i++) {  if($i==0){?>
+                                       <script>
+                                       
+                                           alert("<?php echo $this->listeTypePathologie[$i]; ?>"  );
+                                      
+                                     </script>
+                <?php } }?> <script>
+               // alert(myArrayTypePathologie1);
+                  //DefautPathologie(myArrayOrgane1, myArrayClassePathologie1, myArrayTypePathologie1, 1);
+              
+              /* =================== */
+              </script>
 				</div>
 
 
