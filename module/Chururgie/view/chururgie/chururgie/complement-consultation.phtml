@@ -3000,15 +3000,13 @@ echo $this->form()->openTag($form);
        <?php } ?> <script>     var j = 0;  </script>
        
                   <?php 
-                  for($i=0;$i<count($this->listeTypePathologie);$i++) {  if($i==0){?>
+                  for($i=0;$i<count($this->listeTypePathologie);$i++) {  ?>
                                        <script>
-                                       
-                                           alert("<?php echo $this->listeTypePathologie[$i]; ?>"  );
+                      myArrayTypePathologie1[j++]= "<?php echo $this->listeTypePathologie[$i]; ?>"  ;
                                       
                                      </script>
-                <?php } }?> <script>
-               // alert(myArrayTypePathologie1);
-                  //DefautPathologie(myArrayOrgane1, myArrayClassePathologie1, myArrayTypePathologie1, 1);
+                <?php } ?> <script>
+             DefautPathologie(myArrayOrgane1, myArrayClassePathologie1, myArrayTypePathologie1, 1);
               
               /* =================== */
               </script>

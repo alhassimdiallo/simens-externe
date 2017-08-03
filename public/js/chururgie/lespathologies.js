@@ -104,7 +104,7 @@ $(function () {
 
 //FONCTION INITIALISATION (Par d�faut)
 function DefautPathologie(ListeOrgane, ListeClassePathologie, ListeTypePathologie, n) {
-	
+	alert(ListeOrgane, ListeClassePathologie, ListeTypePathologie, n);
     var i = 0;
     for (i; i < n; i++) {
         creerLalistePathologie(ListeOrgane, ListeClassePathologie, ListeTypePathologie);
